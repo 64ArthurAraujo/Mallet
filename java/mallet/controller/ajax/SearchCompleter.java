@@ -9,10 +9,10 @@ public class SearchCompleter extends AjaxHttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) {
-		writeResponse(SearchesCache.getAllSearchEntries().toString(), response);
+		writeResponse(SearchesCache.getAllSearchEntries().toString().replace(" ", ""), response);
 	}
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) {
-		writeResponse(SearchesCache.getAllSearchEntries().toString(), response);
+		writeResponse(SearchesCache.getAllSearchEntries().toString().replace(" ", ""), response);
 	}
 }
