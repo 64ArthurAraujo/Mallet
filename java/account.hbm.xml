@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="mallet.database.object.Account" table="accounts">
+		<id name="username" column="username" type="string">
+			<generator class="assigned"/>
+		</id>
+		
+		<property name="email" column="email" type="string"/>
+		<property name="password" column="password" type="string"/>
+		<property name="token" column="token" type="string"/>
+		<property name="joinDate" column="join_date" type="timestamp"/>
+	</class>
+</hibernate-mapping>

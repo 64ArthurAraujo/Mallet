@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>Mallet</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list>
+  
+  <!-- Forbidden URLs -->
+
+  <security-constraint>
+	 <web-resource-collection>
+	   <web-resource-name>Assets used by the application</web-resource-name>
+	   <url-pattern >/assets</url-pattern>
+	 </web-resource-collection>
+	 
+	 <auth-constraint/>
+  </security-constraint>
+  
+  <!-- Servlet class Mapping -->
+  
+  <servlet>
+ 	<servlet-name>Account</servlet-name>
+ 	<servlet-class>mallet.controller.redirect.Account</servlet-class>
+  </servlet>
+  
+  <servlet>
+  	<servlet-name>Shop</servlet-name>
+  	<servlet-class>mallet.controller.redirect.Shop</servlet-class>
+  </servlet>
+  
+  <servlet>
+  	<servlet-name>RegisterForm</servlet-name>
+  	<servlet-class>mallet.controller.ajax.RegisterForm</servlet-class>
+  </servlet>
+  
+  <servlet>
+  	<servlet-name>SearchCompleter</servlet-name>
+  	<servlet-class>mallet.controller.ajax.SearchCompleter</servlet-class>
+  </servlet>
+  
+   <!-- Servlet URL Mapping -->
+  
+  <servlet-mapping>
+  	<servlet-name>Account</servlet-name>
+  	<url-pattern>/Account</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>Shop</servlet-name>
+  	<url-pattern>/Shop</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>RegisterForm</servlet-name>
+  	<url-pattern>/RegisterForm</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>SearchCompleter</servlet-name>
+  	<url-pattern>/SearchCompleter</url-pattern>
+  </servlet-mapping>
+  
+</web-app>
