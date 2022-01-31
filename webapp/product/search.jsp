@@ -7,10 +7,14 @@
 		<title>${param.q} | Shop - Mallet</title>
 	</head>
 	<body>
-		<form action="search.jsp" method="GET">
-			<input type="text" name="q" id="search-bar" value="${param.q}">
-			<button>Search</button>
-		</form>
+		<div id="search-box">
+			<form action="search.jsp" method="GET">
+				<input type="text" name="q" id="search-bar" value="${param.q}">
+				<button>Search</button>
+			</form>
+			
+			<p id="autocomplete-string"></p>
+		</div>
 		
 		
 		<%-- TODO change to taglib --%>
