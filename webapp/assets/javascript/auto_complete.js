@@ -2,12 +2,9 @@ const searchBar = document.getElementById("search-bar")
 
 let result = null;
 
-fetchSearchSuggestions()
-
 function doAutoComplete(typedContent) {
-	
-	console.log(typedContent.target.value.length)
-	
+	fetchSearchSuggestions()
+
 	if (result != null) {
 		let cachedSearches = result.replace('[', '').replace(']', '').split(',')		
 		
@@ -20,12 +17,10 @@ function doAutoComplete(typedContent) {
 		} else {
 			showAutoCompleteString("")
 		}
-		
-		console.log(cachedSearches)
 	}
 }
 
-function showAutoCompleteString(searchEntry, typedContent) {
+function showAutoCompleteString(searchEntry) {
 	let paragraph = document.getElementById("autocomplete-string")
 	
 	paragraph.innerText = searchEntry
