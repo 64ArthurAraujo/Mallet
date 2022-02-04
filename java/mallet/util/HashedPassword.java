@@ -11,15 +11,26 @@ import org.apache.commons.codec.binary.Hex;
 
 public class HashedPassword {
 	private String hashed;
+
+	private String username;
+
+	private String password;
 	
 	public HashedPassword(String username, String password) {
-		byte[] salt = ( username + password ).getBytes();
+		this.username = username;
+		this.password = password;
 		
-		KeySpec hashSpecifications = new PBEKeySpec(password.toCharArray(), salt, 65536, 128);
+		KeySpec hashSpecifications = getKeySpecifications();
 		
 		String generatedHashedPassword = generateHash("PBKDF2WithHmacSHA512", hashSpecifications);
 		
 		this.setHashedPassword( generatedHashedPassword );
+	}
+
+	private PBEKeySpec getKeySpecifications() {
+		byte[] salt = ( username + password ).getBytes();
+
+		return new PBEKeySpec(password.toCharArray(), salt, 65536, 128);
 	}
 	
 	private String generateHash(String algorithm, KeySpec hashSpecifications) {
