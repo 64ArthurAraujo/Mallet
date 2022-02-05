@@ -20,7 +20,7 @@
 		</property>
 		
 		<property name="hibernate.dialect">
-			org.hibernate.dialect.MySQLDialect
+			org.hibernate.dialect.MariaDB103Dialect
 		</property>
 		
 		<mapping resource="account.hbm.xml"/>
